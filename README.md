@@ -48,6 +48,36 @@ The Aroon indicators help identify trend strength and potential reversals:
 - Crossovers between Aroon-Up and Aroon-Down can signal potential trend changes
 - Both indicators between 30-70 suggest consolidation/no clear trend
 
+## AI-Powered Analysis
+
+The package includes modern AI agents for advanced analysis:
+
+```python
+import asyncio
+from aroontest import AroonAnalyst
+
+async def main():
+    # Initialize the analysis system
+    analyst = AroonAnalyst()
+    
+    # Perform comprehensive analysis
+    analysis = await analyst.analyze_stock('AAPL')
+    print("Analysis Results:", analysis)
+    
+    # Optimize trading strategy
+    strategy = await analyst.optimize_strategy('AAPL')
+    print("Strategy Optimization:", strategy)
+
+# Run the analysis
+asyncio.run(main())
+```
+
+Key features of the AI system:
+- Multi-agent collaboration using GroupChat
+- Asynchronous processing
+- Cross-validated strategy optimization
+- Detailed visualization and reporting
+
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
