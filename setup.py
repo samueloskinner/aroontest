@@ -15,6 +15,7 @@ setup(
         "pandas",
         "numpy",
         "yfinance",
+        "matplotlib",
     ],
     extras_require={
         "testing": [

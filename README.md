@@ -18,12 +18,35 @@ To use the package, you can import the main module and call the relevant functio
 
 ```python
 import aroontest
-from aroontest.main import fetch_stock_data, calculate_aroon
+from aroontest.main import (
+    fetch_stock_data, 
+    calculate_aroon, 
+    plot_aroon_indicators, 
+    analyze_aroon_signals
+)
 
-tickers = ['AAPL', 'GOOGL', 'MSFT']
+# Fetch data and calculate indicators
+ticker = 'AAPL'
+tickers = [ticker]
 data = fetch_stock_data(tickers)
-aroon_up, aroon_down = calculate_aroon(data['AAPL'])
+stock_data = data[ticker]
+aroon_up, aroon_down = calculate_aroon(stock_data)
+
+# Plot the indicators
+fig = plot_aroon_indicators(stock_data, aroon_up, aroon_down, ticker)
+fig.show()
+
+# Get trading signals
+signals = analyze_aroon_signals(aroon_up, aroon_down)
+for signal in signals:
+    print(signal)
 ```
+
+The Aroon indicators help identify trend strength and potential reversals:
+- Aroon-Up > 70: Strong uptrend
+- Aroon-Down > 70: Strong downtrend
+- Crossovers between Aroon-Up and Aroon-Down can signal potential trend changes
+- Both indicators between 30-70 suggest consolidation/no clear trend
 
 ## Contributing
 
